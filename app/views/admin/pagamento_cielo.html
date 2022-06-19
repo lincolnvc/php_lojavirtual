@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[config_site_title] | Painel Administrativo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+        <script src="js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
+        <script src="js/jquery/jquery-ui-1.9.2.js" type="text/javascript"></script>
+        <script src="js/admin/main.js" type="text/javascript"></script>
+        <script src="js/jquery/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+        <link href="js/jquery/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="js/jquery/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+        <link href="css/admin/main.css" rel="stylesheet" />
+        <script src="js/jquery/jquery.price.js" type="text/javascript"></script>        
+        <script src="js/jquery/jquery.mask.js" type="text/javascript"></script>        
+    </head>
+    <body>
+
+        <div class="" id="main">
+
+            <div class="row-fluid">
+                <div id="top"><h1>[config_site_title]</h1></div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span12 bar">
+                    <div class="span3"></div>
+
+                    <div class="span9">
+                        <div class="pull-right btn-toolbar" style="margin: 0;margin-top:7px;">
+                            <div class="btn-group dropdown">
+                                <button class="btn-mini btn primary btn-inverse"> <i class="icon icon-user icon-white"></i> [user_name]</button>
+                                <button class="btn-mini btn primary btn-inverse dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="[baseUri]/admin/usuario/me/" style="font-size: 9px;">Meus Dados</a></li>
+                                    <li><a href="[baseUri]/admin/login/logout/" style="font-size: 9px;">Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+
+                    <div class="span2 pull-left">
+                        <dl id="nav-left">
+                            <dt><a href="javascript:void(0);" id="dash"><i class="icon-th icon-white"></i> Dashboard <b class="icon-chevron-down"></b></a></dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="[baseUri]/admin/"><i class="icon-home icon-white"></i> Home</a></li>
+                                    <li><a href="[baseUri]/admin/dashboard/itens/"><i class="icon-star icon-white"></i> Produtos Mais Visitados</a></li>
+                                    <li><a href="[baseUri]/admin/pedido"><i class="icon-fire icon-white"></i> Últimos Pedidos</a></li>
+                                    <li><a href="[baseUri]/admin/slideshow/"><i class="icon-camera icon-white"></i> Slideshow e Banners</a></li>
+                                    <li><a href="[baseUri]/atd/" target="_blank"><i class="icon-comment icon-white"></i> Atendimento Online</a></li>
+                                </ul>
+                            </dd>
+                            <dt><a href="javascript:void(0);" id="m1"><i class="icon-filter icon-white"></i> Categorias <b class="icon-chevron-down"></b></a></dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="[baseUri]/admin/categoria/"><i class="icon-tag icon-white"></i> Gerenciar Categorias</a></li>
+                                    <li><a href="[baseUri]/admin/subcategoria/"><i class="icon-tags icon-white"></i> Gerenciar Subcategorias</a></li>
+                                </ul>
+                            </dd>
+                            <dt><a href="javascript:void(0);"><i class="icon-gift icon-white"></i> Produtos <b class="icon-chevron-down"></b></a></dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="[baseUri]/admin/item/novo/"><i class="icon-plus-sign icon-white"></i> Cadastrar Produto</a></li>
+                                    <li><a href="[baseUri]/admin/item/"><i class="icon-th-list icon-white"></i> Produtos Cadastrados</a></li>
+                                    <li><a href="[baseUri]/admin/item/busca/"><i class="icon-search icon-white"></i> Pesquisar Produto</a></li>
+                                    <li><a href="[baseUri]/admin/atributo/"><i class="icon-tags icon-white"></i> Gerenciar Atributos</a></li>
+                                </ul>
+                            </dd>
+                            <dt><a href="javascript:void(0);"><i class="icon-shopping-cart icon-white"></i> Pedidos <b class="icon-chevron-down"></b></a></dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="[baseUri]/admin/pedido/"><i class="icon-th-list icon-white"></i> Lista de Pedidos</a></li>
+                                </ul>
+                            </dd>
+                            <dt><a href="javascript:void(0);"><i class="icon-briefcase icon-white"></i> Clientes <b class="icon-chevron-down"></b></a></dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="[baseUri]/admin/cliente/"><i class="icon-th-list icon-white"></i> Lista de Clientes</a></li>
+                                </ul>
+                            </dd>
+                            <dt class="[showhide]"><a href="javascript:void(0);"><i class="icon-minus-sign icon-white"></i> Cupons <b class="icon-chevron-down"></b></a></dt>
+                            <dd class="[showhide]">
+                                <ul>
+                                    <li><a href="[baseUri]/admin/cupom/"><i class="icon-cog icon-white"></i> Gerenciar Cupons</a></li>
+                                </ul>
+                            </dd>                              
+                            <dt  class="active"><a href="javascript:void(0);"><i class="icon-barcode icon-white"></i> Pagamento <b class="icon-chevron-down"></b></a></dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="[baseUri]/admin/pagamento/pagseguro/"><i class="icon-cog icon-white"></i> Módulo PagSeguro</a></li>
+                                    <li><a class="active" href="[baseUri]/admin/pagamento/cielo/"><i class="icon-cog icon-white"></i> Módulo Cielo</a></li>
+									<li><a href="[baseUri]/admin/pagamento/deposito/"><i class="icon-cog icon-white"></i> Depósito/Transf. Bancário</a></li>
+                                </ul>
+                            </dd>
+                            <dt><a href="javascript:void(0);"><i class="icon-road icon-white"></i> Frete e Entrega <b class="icon-chevron-down"></b></a></dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="[baseUri]/admin/frete/"><i class="icon-cog icon-white"></i> Opções de Frete</a></li>
+                                    <li><a href="[baseUri]/admin/entrega/"><i class="icon-map-marker icon-white"></i> Frete Diferenciado</a></li>
+                                    <li><a href="[baseUri]/admin/retirada/"><i class="icon-map-marker icon-white"></i> Locais de Retirada</a></li>
+                                </ul>
+                            </dd>
+                            <dt><a href="javascript:void(0);"><i class="icon-file icon-white"></i> Páginas e Conteúdo <b class="icon-chevron-down"></b></a></dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="[baseUri]/admin/area/"><i class="icon-tag icon-white"></i> Gerenciar Áreas</a></li>
+                                    <li><a href="[baseUri]/admin/pagina/"><i class="icon-pencil icon-white"></i> Gerenciar Páginas</a></li>
+                                </ul>
+                            </dd>                          
+                            <dt><a href="javascript:void(0);"><i class="icon-wrench icon-white"></i> Configurações <b class="icon-chevron-down"></b></a></dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="[baseUri]/admin/configuracao/"><i class="icon-cog icon-white"></i> Informações da Loja</a></li>
+                                    <li><a href="[baseUri]/admin/smtpc/"><i class="icon-envelope icon-white"></i> Configurar E-mail</a></li>
+                                    <li><a href="[baseUri]/admin/social/"><i class="icon-retweet icon-white"></i> Plugin Redes Sociais</a></li>
+                                </ul>
+                            </dd>
+                            <dt><a href="javascript:void(0);"><i class="icon-user icon-white icon-white"></i> Usuários do Sistema <b class="icon-chevron-down"></b></a></dt>
+                            <dd>
+                                <ul>
+                                    <li><a href="[baseUri]/admin/usuario/operadores/"><i class="icon-user icon-white"></i> Operadores</a></li>
+                                    <li><a href="[baseUri]/admin/usuario/administradores/"><i class="icon-user icon-white"></i> Administradores</a></li>
+                                    <li><a href="[baseUri]/admin/usuario/novo/"><i class="icon-plus-sign icon-white"></i> Novo Usuário</a></li>
+                                </ul>
+                            </dd>                             
+                        </dl>                       
+                    </div>                
+
+                    <div class="span10 pull-right" id="sright">
+                        <div class="row-fluid">
+
+                            <div class="panel panel-box">
+                                <div class="title-grid-inverse">
+                                    <i class="icon-cog icon-white"></i>  <b>Buy Page Cielo - Parâmetros de Pagamento</b>
+                                </div>
+                                <form name="f-frete" id="f-frete" class="form mar-top-10" method="post" onSubmit="return valida()"
+                                      action="[baseUri]/admin/pagamento/atualizar/cielo/" style="padding: 10px">
+                                    <div class="input-prepend">
+                                        <span class="add-on">Filiação Número: </span>
+                                        <input class="span6" required name="pay_user" id="pay_user" type="text" value="[pay_user]" placeholder="Número de filiação junto à Cielo" />
+                                    </div>
+                                    <div class="input-prepend">
+                                        <span class="add-on">Filiação Chave: </span>
+                                        <input class="span6" required name="pay_key" id="pay_key" type="text" value="[pay_key]" placeholder="Chave de filiação fornecida pela Cielo" />
+                                    </div>
+                                    <div class="input-prepend">
+                                        <span class="add-on">Percentual de Juros (%): </span>
+                                        <input class="span6" name="pay_fator_juros" id="pay_fator_juros" type="number" value="[pay_fator_juros]" placeholder="Usado para calcular os juros de parcelamento" />
+                                    </div>  
+
+                                    <div class="input-prepend">
+                                        <span class="add-on">Desconto à vista (%): </span>
+                                        <input class="span6" name="pay_c2" id="pay_c2" type="number" value="[pay_c2]" placeholder="Desconto para pagamento à vista (1x)" />
+                                    </div>  
+                                    <div class="input-prepend hide">
+                                        <span class="add-on">Bandeiras: </span>
+                                        <input class="span6" name="pay_c4" id="pay_c4" type="text" value="[pay_c4]" 
+placeholder="Informe as bandeiras separadas por vírgula" />
+                                    </div>  
+
+                                    <div class="input-prepend">
+                                    <span class="add-on">Parcelar em até: </span>
+                                        <select name="pay_c3" id="pay_c3" class="span6">
+                                            <option value="1">1x</option>
+                                            <option value="2">2x</option>
+                                            <option value="3">3x</option>
+                                            <option value="4">4x</option>
+                                            <option value="5">5x</option>
+                                            <option value="6">6x</option>
+                                            <option value="7">7x</option>
+                                            <option value="8">8x</option>
+                                            <option value="9">9x</option>
+                                            <option value="10">10x</option>
+                                            <option value="11">11x</option>
+                                            <option value="12">12x</option>
+                                            <option value="13">13x</option>
+                                            <option value="14">14x</option>
+                                            <option value="15">15x</option>
+                                            <option value="16">16x</option>
+                                            <option value="17">17x</option>
+                                            <option value="18">18x</option>
+                                        </select>
+                                    </div>  
+
+                                    <div class="input-prepend">
+                                    <span class="add-on">Parcelas s/ juros: </span>
+                                        <select name="pay_c1" id="pay_c1" class="span6">
+                                            <option value="1">1x s/ juros</option>
+                                            <option value="2">2x s/ juros</option>
+                                            <option value="3">3x s/ juros</option>
+                                            <option value="4">4x s/ juros</option>
+                                            <option value="5">5x s/ juros</option>
+                                            <option value="6">6x s/ juros</option>
+                                            <option value="7">7x s/ juros</option>
+                                            <option value="8">8x s/ juros</option>
+                                            <option value="9">9x s/ juros</option>
+                                            <option value="10">10x s/ juros</option>
+                                            <option value="11">11x s/ juros</option>
+                                            <option value="12">12x s/ juros</option>
+                                            <option value="13">13x s/ juros</option>
+                                            <option value="14">14x s/ juros</option>
+                                            <option value="15">15x s/ juros</option>
+                                            <option value="16">16x s/ juros</option>
+                                            <option value="17">17x s/ juros</option>
+                                            <option value="18">18x s/ juros</option>
+                                        </select>
+                                    </div>       
+                                    <div class="input-prepend">
+                                        <span class="add-on">Ambiente: </span>
+                                        <select name="pay_pass" id="pay_pass" class="span6">
+                                            <option value="2">Homologação (teste)</option>
+                                            <option value="1">Produção</option>
+                                        </select>
+                                    </div>   
+                                    <div class="input-prepend">
+                                        <span class="add-on">Status do Módulo: </span>
+                                        <select name="pay_status" id="pay_status" class="span6">
+                                            <option value="1">Habilitado</option>
+                                            <option value="2">Desabilitado</option>
+                                        </select>
+                                    </div>                                
+                                    <br />
+                                    <input class="hide" name="pay_id" id="pay_id" type="hidden" value="[pay_id]" />
+                                    <button type="submit" class="btn" id="btn-add"><i class="icon-edit"></i> Atualizar Dados Cielo</button>
+                                    <br />
+                                    <div id="result"></div>
+                                    
+                                 <br />
+
+                                    
+                                </form>
+                            </div>
+
+                        </div>                                     
+                    </div>
+
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span12 bar"></div>
+                </div>           
+
+                <div class="row-fluid">
+                    <div id="footer"></div>
+                </div>            
+
+            </div> <!--row-flui-->
+        </div> <!--end main-->
+
+        <script>
+            $('#pay_status').val('[pay_status]');
+            $('#pay_pass').val('[pay_pass]');
+            $('#pay_c3').val('[pay_c3]');
+	    $('#pay_c1').val('[pay_c1]');
+	    $('#pay_c2').val('[pay_c2]');
+            window.onload = function(){
+                [msgOnload]                
+            }
+        </script>
+    </body>
+</html>
